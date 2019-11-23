@@ -25,9 +25,9 @@ val customer = Customer("Pedro", "Spain",30)
    case NotRegisteredException(msg) => println(s"****ERROR*** $msg")
 }
 ```
-***PROS***
+### PROS
 - Very similarly to Java, although using a partial function to specify the exceptions we want to deal with
 
-***CONS***
+### CONS
 - having this kind of exception handling code all over your code base can become ugly very quickly and doesn't really go well with functional programming.
 - It's also a rather bad solution for applications with a lot of concurrency.

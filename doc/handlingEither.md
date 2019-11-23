@@ -1,6 +1,5 @@
 # Handling Errors workshop
 
-
 ## *Either[L, R]*
 
 
@@ -14,17 +13,17 @@ def getContent(url: URL): Either[String, Source] =
     Right(Source.fromURL(url))
 ```
 
-**PROS**
+### PROS
 - Either is a good approach to avoid these. It returns Left or Right.
-	- **Left** contains, by convention, the error message that we pass in our code.
+	- **Left** contains, **by convention**, the error message that we pass in our code.
 	- **Right** contains the value itself.
 - IMHO, Either is the more complicated but better way to handle errors; we can create a custom **Algebraic Data Type (ADT)** to structure and maintain the exceptions.
 ```scala
 sealed trait CustomerError {
   val message: String
 }
-  final case class LocationError(message: String) extends ApiError
-	final case class InvalidNameError(message: String) extends ApiError
+  final case class LocationError(message: String) extends CustomerError
+	final case class InvalidNameError(message: String) extends CustomerError
 	...
 }
 case class Customer(name: String, location: String)
@@ -40,5 +39,3 @@ def validateCustomer(customer: Customer): Either[CustomerError, Customer] =
 
 }
 ```
-
-		

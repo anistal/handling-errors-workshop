@@ -23,7 +23,7 @@ validateCustomer(customer)
     }
 ```
 
-***PROS***
+### PROS
 - **AVOID NULLs**. Scala tries to solve the problem by **getting rid of null values** altogether and providing its own type for representing optional values, i.e. values that may be present or not: the Option[A] trait.
 - Provides a default value with `getOrElse`
 ```scala
@@ -33,13 +33,13 @@ println("Gender: " + user.gender.getOrElse("not specified")) // will print "not 
 There is no need to worry if creating the default value is costly for some reason or another – this will only happen if the default value is actually required (***lazy evaluation***).
 - **AWESOME!!!** Also provides:
   - pattern matching
-  - `foreach` (side-effect)
+  - `foreach` (***WARNING!!*** side-effect)
   - `map`
   - `flatMap`
   - `filter`
   - `for-comprehension` (flatMap + map)
   - `orElse` (Chaining options like `someOption orElse otherOption orElse ....`) Vs `getOrElse`
 
-***CONS***
+### CONS
 - **Missing error cause**. It does not provide the error message in case of failures, it just returns `None` for the failures, so if you need it, you are missing the cause that threw the error.
 - ***WARNING using `.get`***. Using `.get`  you might forget about checking with `isDefined` before, leading to a **NullPointException** at runtime, so you haven't gained a lot over using null.

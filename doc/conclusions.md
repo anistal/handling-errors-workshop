@@ -1,0 +1,3 @@
+# Handling Errors workshop
+
+## Conclusions

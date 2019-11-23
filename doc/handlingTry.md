@@ -8,13 +8,12 @@ import java.net.URL
 def parseURL(url: String): Try[URL] = Try(new URL(url))
 ```
 
-**PROS**
-- Try is another technique to achieve functional purity.
+### PROS
 - `Try[A]` represents a computation that:
   - may result in a value of type A, that is an instance of `Success[A]`, simply wrapping a value of type A,
   - or may result in an error, that is an instance of `Failure[A]`, wrapping a `Throwable`, if something went wrong.
-- If we know that a computation may result in an error, we can simply use Try[A] as the return type of our function. This makes the possibility explicit and **forces clients of our function to deal with the possibility of an error in some way.**
-- **AWESOME AS WELL!!!** As Option, also provides:
+- Using Try[A] as the return type of our function, **forces clients of our function to deal with the possibility of an error in some way.**
+- **AWESOME (AS WELL)!!!** As Option, also provides:
   - pattern matching
   - `getOrElse` to pass in a default value to be returned if the Try is a Failure:
 	```scala
@@ -59,7 +58,7 @@ val content = getURLContent("garbage") recover {
 - It's OK for wrapping exceptions coming from *third-party libraries*, but....
 
 
-**CONS**
+### CONS
 -  .... for our own code, if you want to provide a Failure, you finally need, AGAIN, to throw an exception which is exactly what we want to avoid, don't we?
 - Failure for wrapping any exception, but then, outside the context of that exception:
   - where does that exception come from?
