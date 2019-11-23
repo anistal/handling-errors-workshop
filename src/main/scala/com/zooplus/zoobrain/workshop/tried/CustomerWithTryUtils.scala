@@ -7,7 +7,7 @@ import com.zooplus.zoobrain.workshop.model.{CustomerWithOptionalCountry, Custome
 
 import scala.util.{Failure, Success, Try}
 
-class CustomerWithSiteUtils {
+class CustomerWithTryUtils {
 
   def parseURL(site: String): Try[URL] = Try(new URL(site))
 
