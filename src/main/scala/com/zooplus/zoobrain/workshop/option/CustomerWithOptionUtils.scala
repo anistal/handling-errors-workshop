@@ -24,9 +24,9 @@ object ShopWithOption extends App {
         s"${loggedInCustomer.name}, ${loggedInCustomer.age} years, from ${loggedInCustomer.country}")
     }
 
-  val default = utils
-    .validateCustomer(dummyCustomer)
-    .getOrElse(CustomerWithOptionalCountry("Dummy", Some("DummyLand"), 100))
-  println(s"${default.name}, ${default.age} years, from ${default.country}")
+//  val default = utils
+//    .validateCustomer(dummyCustomer)
+//    .getOrElse(CustomerWithOptionalCountry("Dummy", Some("DummyLand"), 100))
+//  println(s"${default.name}, ${default.age} years, from ${default.country}")
 
 }

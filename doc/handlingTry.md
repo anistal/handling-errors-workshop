@@ -13,7 +13,7 @@ def parseURL(url: String): Try[URL] = Try(new URL(url))
   - may result in a value of type A, that is an instance of `Success[A]`, simply wrapping a value of type A,
   - or may result in an error, that is an instance of `Failure[A]`, wrapping a `Throwable`, if something went wrong.
 - Using Try[A] as the return type of our function, **forces clients of our function to deal with the possibility of an error in some way.**
-- **AWESOME (AS WELL)!!!** As Option, also provides:
+- **AWESOME (again)!!!** As Option, also provides:
   - pattern matching
   - `getOrElse` to pass in a default value to be returned if the Try is a Failure:
 	```scala
