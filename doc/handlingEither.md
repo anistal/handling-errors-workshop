@@ -39,7 +39,7 @@ def validateCustomer(customer: Customer): Either[CustomerError, Customer] =
 }
 ```
 - Curiously..... **AWESOME** (again)!!, you can:
-  - (Since 2.12) Either is right-biased, which means that Right is assumed to be the default case to operate on. If it is Left, operations like **map, flatMap**, ... return the Left value unchanged:
+  - (Since 2.12) Either is right-based, which means that Right is assumed to be the default case to operate on. If it is Left, operations like **map, flatMap**, ... return the Left value unchanged:
 ```scala
 Right(12).map(_ * 2) // Right(24)
 Left(23).map(_ * 2)  // Left(23)
